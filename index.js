@@ -8,6 +8,7 @@ const { Client } = require("@googlemaps/google-maps-services-js");
 dotenv.config();
 
 const key = process.env.API_KEY;
+const port = process.env.PORT;
 
 const app = express();
 const server = http.createServer(app);
@@ -23,8 +24,8 @@ app
 
     res.json(result);
   })
-  .listen(3002, () =>
-    console.log({ message: `Server ᕕ(ಠ‿ಠ)ᕗ in the port ${3002}` })
+  .listen(port, () =>
+    console.log({ message: `Server ᕕ(ಠ‿ಠ)ᕗ in the port ${port}` })
   );
 
 server.on("error", () => console.log({ error: "algo salio mal" }));
